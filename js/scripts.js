@@ -1,11 +1,12 @@
 //Business Logic
 
 //Builds a pizza object
-function Pizza(size, cheese, sauce, toppings) {
+function Pizza(size, cheese, sauce, toppings, meats) {
   this.size = size;
   this.cheese = cheese;
   this.sauce = sauce;
   this.toppings = toppings;
+  this.meats = meats;
 }
 
 //Returns the cost of the size of the pizza
@@ -50,32 +51,49 @@ Pizza.prototype.determineToppingsCost = function() {
   return toppingsPrice;
 }
 
+//Returns the cost of the meat on the pizza
+Pizza.prototype.determineMeatsCost = function() {
+  var meatPrice = 0;
+  meatPrice = this.meats * 2.25;
+  return meatPrice;
+}
 
+//Determines the total cost of a pizza
+function calculateCost (pizza) {
+  var price = 0;
+  var sizeCost = pizza.determineSizeCost();
+  var cheeseCost = pizza.determineCheeseCost();
+  var sauceCost = pizza.determineSauceCost();
+  var toppingsCost = pizza.determineToppingsCost();
+  var meatsCost = pizza.determineMeatsCost();
+  price = sizeCost + cheeseCost + sauceCost + toppingsCost + meatsCost;
+  price = price.toFixed(2);
+  return price;
+}
 
 //UI Logic
 $(function(){
+  
   $(".user-order").submit(function(event){
     event.preventDefault();
     var size = $("#sizes").val();
     var cheese = $("input[name=cheese]:checked").val();
     var sauce = $("input[name=sauce]:checked").val();
     var toppings = 0;
-    var finalPrice = 0;
+    var meats = 0;
 
     $(".topping:checked[type='checkbox']").each(function() {
-      toppings ++;
+      toppings++;
     });
 
-    var pizzaOrder = new Pizza(size, cheese, sauce, toppings);
+    $(".meat:checked[type='checkbox']").each(function() {
+      meats++;
+    });
 
-    sizeCost = pizzaOrder.determineSizeCost();
-    cheeseCost = pizzaOrder.determineCheeseCost();
-    sauceCost = pizzaOrder.determineSauceCost();
-    toppingsCost = pizzaOrder.determineToppingsCost();
+    var pizzaOrder = new Pizza(size, cheese, sauce, toppings, meats);
 
+    var finalPrice = calculateCost(pizzaOrder);
 
-    finalPrice = sizeCost + cheeseCost + sauceCost + toppingsCost;
-    finalPrice = finalPrice.toFixed(2);
     console.log("$" + finalPrice);
     $(".receipt").show();
     $("#final-price").text(finalPrice);
