@@ -1,4 +1,4 @@
-# White Wizard Pizza_
+# White Wizard Pizza
 
 #### _A webpage for a fictional pizza joint that allows the user to order multiple custom pizzas._
 
