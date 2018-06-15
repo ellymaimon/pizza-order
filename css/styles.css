@@ -2,7 +2,11 @@ body {
   margin: 20px auto 50px auto;
 }
 
-.receipt {
+.status {
+  display: none;
+}
+
+.final {
   display: none;
 }
 
@@ -19,13 +23,15 @@ header {
 .menu {
   border: 1px dashed crimson;
   padding: 10px 0 10px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .menu p {
   font-size: 14px;
 }
 
-.menu h2 {
+.menu {
   text-align: center;
 }
 

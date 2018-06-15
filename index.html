@@ -39,7 +39,7 @@
         </div>
         <div class="col-xl">
           <h5>Premium Sauce (+$1.99):</h5>
-          <p>Spicy Isengard Heirloom Tomato Sauce<br>A Smothering of Gravy<br>Haradim Curry Sauce</p>
+          <p>Spicy Isengard Heirloom Sauce<br>A Smothering of Gravy<br>Haradim Curry Sauce</p>
         </div>
         <div class="col-xl">
           <h5>Toppings (+$0.99 each):</h5>
@@ -54,7 +54,7 @@
 
     <div class="order-area">
       <h2>Customize your pizza below:</h2>
-      <form class="user-order">
+      <form class="user-order" id="order">
         <div class="sizes custom">
           <div class="form-group">
             <label for="size-form">Choose the size:</label>
@@ -131,11 +131,17 @@
       </form>
     </div>
 
-    <div class="receipt">
+    <div class="status">
       <h2>Current Order:</h2>
-      <p>Your total price is: $<span id="final-price"></span></p>
+      <p>Your current pizza will cost: $<span id="current-price"></span></p>
       <button class="btn btn-success" type="button" id="finish-button">Complete Order</button>
       <button class="btn btn-warning" type="button" id="add-button">Add an additional Pizza</button>
+    </div>
+
+    <div class="final">
+      <h2>Thank you for placing your order!</h2>
+      <p>The total cost comes out to: $<span id="final-price"></span></p>
+      <button class="btn btn-success" type="button" id="new-order-button">Place a new order</button>
     </div>
 
   </div>

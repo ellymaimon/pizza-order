@@ -58,7 +58,16 @@ Pizza.prototype.determineMeatsCost = function() {
   return meatPrice;
 }
 
-//Determines the total cost of a pizza
+//Adds the current pizza cost to the total for all pizzas
+function calculateFinal(currentCost, newCost) {
+  cost1 = parseFloat(currentCost);
+  cost2 = parseFloat(newCost);
+  var total = cost1 + cost2;
+  total = total.toFixed(2);
+  return total;
+}
+
+//Determines the total cost of a single pizza
 function calculateCost (pizza) {
   var price = 0;
   var sizeCost = pizza.determineSizeCost();
@@ -71,10 +80,15 @@ function calculateCost (pizza) {
   return price;
 }
 
+
 //UI Logic
 $(function(){
+  var currentPrice = 0;
+  var finalPrice = 0;
+
   $(".user-order").submit(function(event){
     event.preventDefault();
+
     var size = $("#sizes").val();
     var cheese = $("input[name=cheese]:checked").val();
     var sauce = $("input[name=sauce]:checked").val();
@@ -91,10 +105,34 @@ $(function(){
 
     var pizzaOrder = new Pizza(size, cheese, sauce, toppings, meats);
 
-    var finalPrice = calculateCost(pizzaOrder);
-    $(".receipt").show();
+    currentPrice = calculateCost(pizzaOrder);
+    $(".status").show();
     $(".order-area").hide();
-    $("#final-price").text(finalPrice);
-    $(".user-order").reset();
+    $("#current-price").text(currentPrice);
+    console.log(currentPrice);
   });
+
+  $("#add-button").click(function(){
+    console.log(currentPrice);
+    finalPrice = calculateFinal(currentPrice, finalPrice)
+    console.log(finalPrice);
+    $(".order-area").show();
+    document.getElementById("order").reset();
+    $(".status").hide();
+
+  });
+
+  $("#finish-button").click(function(){
+    finalPrice = calculateFinal(currentPrice, finalPrice)
+    console.log(finalPrice);
+    $(".status").hide();
+    $(".final").show();
+    $("#final-price").text(finalPrice);
+  });
+
+  $("#new-order-button").click(function(){
+    location.reload();
+  });
+
+
 });
