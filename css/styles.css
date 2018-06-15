@@ -6,7 +6,26 @@ body {
   display: none;
 }
 
+.size-menu {
+  margin-right: 30px;
+  font-size: 18px;
+}
+
 header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.menu {
+  border: 1px dashed crimson;
+  padding: 10px 0 10px 10px;
+}
+
+.menu p {
+  font-size: 14px;
+}
+
+.menu h2 {
   text-align: center;
 }
 
