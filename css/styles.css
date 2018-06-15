@@ -16,20 +16,20 @@ body {
 
 .status {
   display: none;
-  background-color: #edf3ff;
+  background-color: #fff7f7;
   border: 1px dashed crimson;
   padding: 20px;
 }
 
 .final {
   display: none;
-  background-color: #edf3ff;
+  background-color: #fff7f7;
   border: 1px dashed crimson;
   padding: 20px;
 }
 
 .order-area {
-  background-color: #edf3ff;
+  background-color: #fff7f7;
   border: 1px dashed crimson;
   padding: 20px;
 }
@@ -43,13 +43,13 @@ header {
   text-align: center;
   margin-bottom: 15px;
   font-family: 'Cormorant Unicase', serif;
-  background-color: #edf3ff;
+  background-color: #fff7f7;
   border: 1px dashed crimson;
   padding: 20px;
 }
 
 .menu {
-  background-color: #edf3ff;
+  background-color: #fff7f7;
   border: 1px dashed crimson;
   padding: 10px 0 10px 10px;
   margin-top: 20px;
