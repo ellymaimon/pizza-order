@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pizza Ghost</title>
+  <title>Middle Earth Pizza</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -12,17 +12,40 @@
 </head>
 <body>
   <div class="container">
+    <h1>Welcome to Middle Earth Pizza!</h1>
+    <h2>Customize your pizza below:</h2>
     <div class="order-area">
       <form class="user-order">
-        <div class="form-group">
-          <label for="size-form">Example select</label>
-          <select class="form-control" id="size-form">
-            <option>Halfling</option>
-            <option>Dwarf</option>
-            <option>King</option>
-            <option>Uruk-Hai</option>
-            <option>Troll</option>
-          </select>
+        <div class="sizes">
+          <div class="form-group">
+            <label for="size-form">Choose the size:</label>
+            <select class="form-control" id="size-form">
+              <option>Hobbit</option>
+              <option>Dwarf</option>
+              <option>King</option>
+              <option>Uruk-Hai</option>
+              <option>Cave Troll</option>
+            </select>
+          </div>
+        </div>
+        <div class="toppings">
+          <p>Choose your toppings:</p>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="taters" value="1">
+            <label class="form-check-label" for="taters">Samwise Taters</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="mushrooms" value="1">
+            <label class="form-check-label" for="mushrooms">Buckland Mushrooms</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="greens" value="1">
+            <label class="form-check-label" for="greens">Foraged Mirkwood Greens</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="carrots" value="1">
+            <label class="form-check-label" for="carrots">Farmer Maggot's Carrots</label>
+          </div>
         </div>
       </form>
 

@@ -8,7 +8,7 @@ function Pizza(toppings, size, price) {
 //Returns the cost of the size of the pizza
 Pizza.prototype.determineSizeCost = function() {
   var sizePrice = 0;
-  if (this.size === "Halfling") {
+  if (this.size === "Hobbit") {
     sizePrice += 8.99;
   } else if (this.size === "Dwarf") {
     sizePrice += 11.99;
