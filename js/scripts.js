@@ -73,7 +73,6 @@ function calculateCost (pizza) {
 
 //UI Logic
 $(function(){
-  
   $(".user-order").submit(function(event){
     event.preventDefault();
     var size = $("#sizes").val();
@@ -93,9 +92,9 @@ $(function(){
     var pizzaOrder = new Pizza(size, cheese, sauce, toppings, meats);
 
     var finalPrice = calculateCost(pizzaOrder);
-
-    console.log("$" + finalPrice);
     $(".receipt").show();
+    $(".order-area").hide();
     $("#final-price").text(finalPrice);
+    $(".user-order").reset();
   });
 });
