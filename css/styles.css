@@ -1,0 +1,7 @@
+.receipt {
+  display: none;
+}
+
+.sizes, .cheese, .toppings {
+  margin-bottom: 25px;
+}
