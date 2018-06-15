@@ -1,9 +1,8 @@
 //Builds a pizza object
-function Pizza(toppings, size, price) {
-  this.toppings = toppings;
+function Pizza(size, toppings, price) {
   this.size = size;
+  this.toppings = toppings;
 }
-
 
 //Returns the cost of the size of the pizza
 Pizza.prototype.determineSizeCost = function() {
@@ -34,7 +33,16 @@ Pizza.prototype.determineToppingsCost = function() {
 $(function(){
   $(".user-order").submit(function(event){
     event.preventDefault();
+    var size = $("#sizes").val();
+    var toppings = 0;
+    $(".topping:checked[type='checkbox']").each(function() {
+      toppings ++
+    });
+    console.log(size);
+    console.log(toppings);
 
-    var pizzaOrder = new Pizza();
+    var pizzaOrder = new Pizza(size, toppings);
+
+
   });
 });
