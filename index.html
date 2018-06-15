@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Middle Earth Pizza</title>
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Unicase:700|EB+Garamond" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -134,8 +135,10 @@
     <div class="status">
       <h2>Current Order:</h2>
       <p>Your current pizza will cost: $<span id="current-price"></span></p>
+      <p>Your running total is: $<span id="current-total"></span></p>
       <button class="btn btn-success" type="button" id="finish-button">Complete Order</button>
       <button class="btn btn-warning" type="button" id="add-button">Add an additional Pizza</button>
+      <button class="btn btn-danger" type="button" id="start-over-button">Start Over</button>
     </div>
 
     <div class="final">

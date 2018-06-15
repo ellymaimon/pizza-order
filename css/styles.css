@@ -1,10 +1,13 @@
 body {
   margin: 15px auto;
-  background-image: url("../img/salad.jpg");
+  background-image: url("../img/background.jpg");
+  font-family: 'EB Garamond', serif;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-size: 110%;
 }
 
 .container {
-  background-color: #f2eae3;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 40px 50px 40px;
@@ -13,10 +16,22 @@ body {
 
 .status {
   display: none;
+  background-color: #edf3ff;
+  border: 1px dashed crimson;
+  padding: 20px;
 }
 
 .final {
   display: none;
+  background-color: #edf3ff;
+  border: 1px dashed crimson;
+  padding: 20px;
+}
+
+.order-area {
+  background-color: #edf3ff;
+  border: 1px dashed crimson;
+  padding: 20px;
 }
 
 .size-menu {
@@ -27,28 +42,32 @@ body {
 header {
   text-align: center;
   margin-bottom: 15px;
+  font-family: 'Cormorant Unicase', serif;
+  background-color: #edf3ff;
+  border: 1px dashed crimson;
+  padding: 20px;
 }
 
 .menu {
+  background-color: #edf3ff;
   border: 1px dashed crimson;
   padding: 10px 0 10px 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Cormorant Unicase', serif;
 }
 
 .menu p {
   font-size: 14px;
 }
 
-.menu {
-  text-align: center;
-}
-
 h1 {
-  /* width: 600px; */
-  /* margin-right: 10px; */
   display: inline-block;
-  font-size: 44px;
+  font-size: 50px;
 }
 
 #logo {

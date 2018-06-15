@@ -108,17 +108,21 @@ $(function(){
     $(".status").show();
     $(".order-area").hide();
     $("#current-price").text(currentPrice);
+    finalPrice = calculateFinal(currentPrice, finalPrice)
+    $("#current-total").text(finalPrice);
   });
 
   $("#add-button").click(function(){
-    finalPrice = calculateFinal(currentPrice, finalPrice)
     $(".order-area").show();
     document.getElementById("order").reset();
     $(".status").hide();
   });
 
+  $("#start-over-button").click(function(){
+    location.reload();
+  });
+
   $("#finish-button").click(function(){
-    finalPrice = calculateFinal(currentPrice, finalPrice)
     $(".status").hide();
     $(".final").show();
     $("#final-price").text(finalPrice);
