@@ -109,13 +109,10 @@ $(function(){
     $(".status").show();
     $(".order-area").hide();
     $("#current-price").text(currentPrice);
-    console.log(currentPrice);
   });
 
   $("#add-button").click(function(){
-    console.log(currentPrice);
     finalPrice = calculateFinal(currentPrice, finalPrice)
-    console.log(finalPrice);
     $(".order-area").show();
     document.getElementById("order").reset();
     $(".status").hide();
@@ -124,7 +121,6 @@ $(function(){
 
   $("#finish-button").click(function(){
     finalPrice = calculateFinal(currentPrice, finalPrice)
-    console.log(finalPrice);
     $(".status").hide();
     $(".final").show();
     $("#final-price").text(finalPrice);
