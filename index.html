@@ -18,6 +18,7 @@
       <img src="img/wizardpizza.png" alt="Wizard Pizza Logo" id="logo">
     </header>
 
+    <!-- Menu Box -->
     <div class="menu">
       <h2>Menu</h2>
       <div class="row">
@@ -53,9 +54,13 @@
       </div>
     </div>
 
+    <img src="img/frodopizza.jpg" alt="Frodo and a Pizza" id="frodo">
+
+    <!-- Order Box -->
     <div class="order-area">
       <h2>Customize your pizza below:</h2>
       <form class="user-order" id="order">
+        <!-- Size -->
         <div class="sizes custom">
           <div class="form-group">
             <label for="size-form">Choose the size:</label>
@@ -68,6 +73,7 @@
             </select>
           </div>
         </div>
+        <!-- Cheese -->
         <div class="cheese custom">
           <p>Substitute a premium cheese:</p>
           <div class="form-check form-check-inline">
@@ -83,6 +89,7 @@
             <label class="form-check-label" for="brandybuck">BrandyBuck Melty Brie</label>
           </div>
         </div>
+        <!-- Sauce -->
         <div class="sauce custom">
           <p>Substitute a premium sauce:</p>
           <div class="form-check form-check-inline">
@@ -98,6 +105,7 @@
             <label class="form-check-label" for="haradin">Haradim Curry Sauce</label>
           </div>
         </div>
+        <!-- Toppings -->
         <div class="toppings custom">
           <p>Choose your toppings:</p>
           <div class="form-check form-check-inline">
@@ -117,6 +125,7 @@
             <label class="form-check-label" for="carrots">Farmer Maggot's Carrots</label>
           </div>
         </div>
+        <!-- Meats -->
         <div class="meats custom">
           <p>Choose your meats:</p>
           <div class="form-check form-check-inline">
@@ -132,6 +141,7 @@
       </form>
     </div>
 
+    <!-- Status of Order -->
     <div class="status">
       <h2>Current Order:</h2>
       <p>Your current pizza will cost: $<span id="current-price"></span></p>
@@ -142,6 +152,7 @@
       <button class="btn btn-danger" type="button" id="start-over-button">Start Over</button>
     </div>
 
+    <!-- Finished Order -->
     <div class="final">
       <h2>Thank you for placing your order!</h2>
       <p>The total cost comes out to: $<span id="final-price"></span></p>

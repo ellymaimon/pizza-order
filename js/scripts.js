@@ -82,9 +82,11 @@ function calculateFinal(currentCost, newCost) {
 
 //UI Logic
 $(function(){
+
   var currentPrice = 0;
   var finalPrice = 0;
 
+  //Submits initial order
   $(".user-order").submit(function(event){
     event.preventDefault();
 
@@ -116,7 +118,6 @@ $(function(){
     $("#current-price").text(currentPrice);
     finalPrice = calculateFinal(currentPrice, finalPrice)
     $("#current-total").text(finalPrice);
-    console.log(pizzaOrder);
     $(".size-of-pizza").text(pizzaOrder.size);
     $(".premium-cheese").text(pizzaOrder.cheese);
     $(".premium-sauce").text(pizzaOrder.sauce);
@@ -124,25 +125,32 @@ $(function(){
     $(".amount-meats").text(pizzaOrder.meats);
   });
 
+  //Allows the user to order another pizza
   $("#add-button").click(function(){
     $(".order-area").show();
     document.getElementById("order").reset();
     $(".status").hide();
   });
 
+  //Allows to user to start over
   $("#start-over-button").click(function(){
     location.reload();
   });
 
+  //Allows the user to finish their order
   $("#finish-button").click(function(){
     $(".status").hide();
     $(".final").show();
+    $(".menu").hide();
+    $("header").hide();
+    $("#frodo").show();
+    location.hash = "#frodo";
     $("#final-price").text(finalPrice);
   });
 
+  //Allows the user to place a new order
   $("#new-order-button").click(function(){
     location.reload();
   });
-
 
 });
