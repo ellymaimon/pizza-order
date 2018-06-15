@@ -7,6 +7,10 @@ body {
   font-size: 110%;
 }
 
+#menu-header {
+  font-size: 44px;
+}
+
 #frodo {
   display: none;
   max-width: 100%;
