@@ -71,30 +71,30 @@
         <div class="cheese custom">
           <p>Substitute a premium cheese:</p>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="cheese" id="dunland" value="dunland">
+            <input class="form-check-input" type="radio" name="cheese" id="dunland" value="premium">
             <label class="form-check-label" for="dunland">Dunland Hand-Pulled Mozzarella</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="cheese" id="misty-mountain" value="misty">
+            <input class="form-check-input" type="radio" name="cheese" id="misty-mountain" value="premium">
             <label class="form-check-label" for="misty-mountain">Misty Mountain Goat's Milk Cheese</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="cheese" id="brandybuck" value="brandy">
+            <input class="form-check-input" type="radio" name="cheese" id="brandybuck" value="premium">
             <label class="form-check-label" for="brandybuck">BrandyBuck Melty Brie</label>
           </div>
         </div>
         <div class="sauce custom">
           <p>Substitute a premium sauce:</p>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sauce" id="isengard" value="isengard">
+            <input class="form-check-input" type="radio" name="sauce" id="isengard" value="premium">
             <label class="form-check-label" for="isengard">Spicy Isengard Heirloom Tomato Sauce</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sauce" id="gravy" value="gravy">
+            <input class="form-check-input" type="radio" name="sauce" id="gravy" value="premium">
             <label class="form-check-label" for="gravy">A Smothering of Gravy</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sauce" id="haradim" value="haradim">
+            <input class="form-check-input" type="radio" name="sauce" id="haradim" value="premium">
             <label class="form-check-label" for="haradin">Haradim Curry Sauce</label>
           </div>
         </div>
@@ -135,6 +135,7 @@
     <div class="status">
       <h2>Current Order:</h2>
       <p>Your current pizza will cost: $<span id="current-price"></span></p>
+      <p>Your current pizza is a <span class="size-of-pizza"></span> size with <span class="premium-cheese"></span> cheese, <span class="premium-sauce"></span> sauce, <span class="amount-toppings"></span> toppings, and <span class="amount-meats"></span> meats.</p>
       <p>Your running total is: $<span id="current-total"></span></p>
       <button class="btn btn-success" type="button" id="finish-button">Complete Order</button>
       <button class="btn btn-warning" type="button" id="add-button">Add an additional Pizza</button>

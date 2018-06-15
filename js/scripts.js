@@ -29,16 +29,16 @@ Pizza.prototype.determineSizeCost = function() {
 //Returns the cost of the cheese on the pizza
 Pizza.prototype.determineCheeseCost = function() {
   var cheesePrice = 0;
-  if (this.cheese === "dunland" || this.cheese === "misty" || this.cheese === "brandy") {
+  if (this.cheese === "premium") {
     cheesePrice += 1.79;
   }
   return cheesePrice;
 }
 
-//Returns the cost of the sauces on the pizza
+//Returns the cost of the sauce on the pizza
 Pizza.prototype.determineSauceCost = function() {
   var saucePrice = 0;
-  if (this.sauce === "isengard" || this.sauce === "gravy" || this.sauce === "haradim") {
+  if (this.sauce === "premium") {
     saucePrice += 1.99;
   }
   return saucePrice;
@@ -90,7 +90,13 @@ $(function(){
 
     var size = $("#sizes").val();
     var cheese = $("input[name=cheese]:checked").val();
+    if(cheese === undefined) {
+      cheese = "basic farmer's";
+    }
     var sauce = $("input[name=sauce]:checked").val();
+    if (sauce === undefined) {
+      sauce = "basic home-made tomato";
+    }
     var toppings = 0;
     var meats = 0;
 
@@ -110,6 +116,12 @@ $(function(){
     $("#current-price").text(currentPrice);
     finalPrice = calculateFinal(currentPrice, finalPrice)
     $("#current-total").text(finalPrice);
+    console.log(pizzaOrder);
+    $(".size-of-pizza").text(pizzaOrder.size);
+    $(".premium-cheese").text(pizzaOrder.cheese);
+    $(".premium-sauce").text(pizzaOrder.sauce);
+    $(".amount-toppings").text(pizzaOrder.toppings);
+    $(".amount-meats").text(pizzaOrder.meats);
   });
 
   $("#add-button").click(function(){
