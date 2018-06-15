@@ -35,14 +35,19 @@ $(function(){
     event.preventDefault();
     var size = $("#sizes").val();
     var toppings = 0;
+    var finalPrice = 0;
+
     $(".topping:checked[type='checkbox']").each(function() {
-      toppings ++
+      toppings ++;
     });
-    console.log(size);
-    console.log(toppings);
 
     var pizzaOrder = new Pizza(size, toppings);
+    sizeCost = pizzaOrder.determineSizeCost();
+    toppingsCost = pizzaOrder.determineToppingsCost();
+    console.log(sizeCost);
+    console.log(toppingsCost);
 
-
+    finalPrice = sizeCost + toppingsCost;
+    console.log(finalPrice);
   });
 });
