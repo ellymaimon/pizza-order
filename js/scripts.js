@@ -58,15 +58,6 @@ Pizza.prototype.determineMeatsCost = function() {
   return meatPrice;
 }
 
-//Adds the current pizza cost to the total for all pizzas
-function calculateFinal(currentCost, newCost) {
-  cost1 = parseFloat(currentCost);
-  cost2 = parseFloat(newCost);
-  var total = cost1 + cost2;
-  total = total.toFixed(2);
-  return total;
-}
-
 //Determines the total cost of a single pizza
 function calculateCost (pizza) {
   var price = 0;
@@ -80,6 +71,14 @@ function calculateCost (pizza) {
   return price;
 }
 
+//Adds the cost of the pizza to the running total for all pizzas
+function calculateFinal(currentCost, newCost) {
+  cost1 = parseFloat(currentCost);
+  cost2 = parseFloat(newCost);
+  var total = cost1 + cost2;
+  total = total.toFixed(2);
+  return total;
+}
 
 //UI Logic
 $(function(){
@@ -116,7 +115,6 @@ $(function(){
     $(".order-area").show();
     document.getElementById("order").reset();
     $(".status").hide();
-
   });
 
   $("#finish-button").click(function(){
