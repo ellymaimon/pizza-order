@@ -37,7 +37,10 @@ Pizza.prototype.determineCheeseCost = function() {
 //Returns the cost of the sauces on the pizza
 Pizza.prototype.determineSauceCost = function() {
   var saucePrice = 0;
-
+  if (this.sauce === "isengard" || this.sauce === "gravy" || this.sauce === "haradim") {
+    saucePrice += 1.99;
+  }
+  return saucePrice;
 }
 
 //Returns the cost of the toppings on the pizza
@@ -55,6 +58,7 @@ $(function(){
     event.preventDefault();
     var size = $("#sizes").val();
     var cheese = $("input[name=cheese]:checked").val();
+    var sauce = $("input[name=sauce]:checked").val();
     var toppings = 0;
     var finalPrice = 0;
 
@@ -63,13 +67,14 @@ $(function(){
     });
 
     var pizzaOrder = new Pizza(size, cheese, sauce, toppings);
+
     sizeCost = pizzaOrder.determineSizeCost();
     cheeseCost = pizzaOrder.determineCheeseCost();
-    sauceCost = pizzaOrder.determineCheeseCost();
+    sauceCost = pizzaOrder.determineSauceCost();
     toppingsCost = pizzaOrder.determineToppingsCost();
 
 
-    finalPrice = sizeCost + cheeseCost + toppingsCost;
+    finalPrice = sizeCost + cheeseCost + sauceCost + toppingsCost;
     finalPrice = finalPrice.toFixed(2);
     console.log("$" + finalPrice);
     $(".receipt").show();
